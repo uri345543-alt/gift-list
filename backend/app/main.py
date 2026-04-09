@@ -19,6 +19,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def root():
+    return {"message": "API OK"}
+
 # Include routers
 app.include_router(auth.router)
 app.include_router(users.router)
