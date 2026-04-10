@@ -9,7 +9,6 @@ import Signup from './pages/Signup.jsx';
 import Dashboard from './pages/Dashboard.jsx';
 import EventDetails from './pages/EventDetails.jsx';
 import Profile from './pages/Profile.jsx';
-import VerifyEmail from './pages/VerifyEmail.jsx';
 
 function App() {
   const { t } = useTranslation();
@@ -45,7 +44,6 @@ function App() {
             <Routes>
               <Route path="/login" element={token ? <Navigate to="/" /> : <Login setToken={setToken} />} />
               <Route path="/signup" element={token ? <Navigate to="/" /> : <Signup />} />
-              <Route path="/verify-email" element={<VerifyEmail />} />
               <Route 
                 path="/" 
                 element={token ? <Dashboard /> : <Navigate to="/login" />} 

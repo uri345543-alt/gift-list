@@ -30,7 +30,7 @@
     "button": "Registrarse",
     "haveAccount": "¿Ya tienes una cuenta?",
     "login": "Iniciar Sesión",
-    "success": "¡Éxito! Redirigiendo al inicio de sesión...",
+    "success": "¡Registro completado con éxito! Ya puedes iniciar sesión.",
     "failed": "El registro ha fallado. Puede que el correo ya exista."
   },
   "dashboard": {

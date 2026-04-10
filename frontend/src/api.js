@@ -20,7 +20,6 @@ export const authApi = {
     return api.post('/auth/token', params);
   },
   signup: (email, password, name) => api.post('/auth/signup', { email, password, name }),
-  verifyEmail: (token) => api.get(`/auth/verify-email?token=${token}`),
   me: () => api.get('/users/me'),
   updateMe: (data) => api.put('/users/me', data),
 };

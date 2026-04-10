@@ -12,7 +12,7 @@ class User(Base):
     email = Column(String, unique=True, index=True, nullable=False)
     name = Column(String, nullable=True)
     hashed_password = Column(String, nullable=False)
-    is_active = Column(Boolean, default=False)
+    is_active = Column(Boolean, default=True)
     is_group = Column(Boolean, default=False)
 
     events = relationship("Event", back_populates="owner", cascade="all, delete-orphan")

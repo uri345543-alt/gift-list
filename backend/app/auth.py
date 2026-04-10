@@ -13,10 +13,8 @@ from .database import get_db
 
 
 SECRET_KEY = os.getenv("SECRET_KEY", "CHANGE_ME_SECRET_KEY_FOR_DEV")
-EMAIL_VERIFICATION_SECRET_KEY = os.getenv("EMAIL_VERIFICATION_SECRET_KEY", "CHANGE_ME_EMAIL_VERIFICATION_SECRET_KEY_FOR_DEV")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24
-EMAIL_VERIFICATION_EXPIRE_HOURS = 24
 
 pwd_context = CryptContext(
     schemes=["argon2"],
@@ -39,24 +37,6 @@ def create_access_token(data: dict, expires_delta: Optional[timedelta] = None) -
     to_encode.update({"exp": expire})
     encoded_jwt = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
     return encoded_jwt
-
-
-def create_verification_token(email: str) -> str:
-    expire = datetime.utcnow() + timedelta(hours=EMAIL_VERIFICATION_EXPIRE_HOURS)
-    to_encode = {"sub": email, "exp": expire}
-    encoded_jwt = jwt.encode(to_encode, EMAIL_VERIFICATION_SECRET_KEY, algorithm=ALGORITHM)
-    return encoded_jwt
-
-
-def verify_verification_token(token: str) -> Optional[str]:
-    try:
-        payload = jwt.decode(token, EMAIL_VERIFICATION_SECRET_KEY, algorithms=[ALGORITHM])
-        email: str = payload.get("sub")
-        if email is None:
-            return None
-        return email
-    except JWTError:
-        return None
 
 
 def get_current_user(db: Session = Depends(get_db), token: str = Depends(oauth2_scheme)) -> models.User:

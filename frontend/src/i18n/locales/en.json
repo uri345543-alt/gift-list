@@ -32,7 +32,7 @@
     "button": "Signup",
     "haveAccount": "Already have an account?",
     "login": "Login",
-    "success": "Success! Check your email to confirm your account.",
+    "success": "Registration successful! You can now login.",
     "failed": "Registration failed. Email might already exist.",
     "invalidEmail": "Please enter a valid email address.",
     "verifySuccess": "Email verified successfully! You can now login.",

@@ -32,7 +32,7 @@
     "button": "Registrar-se",
     "haveAccount": "Ja tens un compte?",
     "login": "Iniciar Sessió",
-    "success": "Èxit! Revisa el teu correu per confirmar el teu compte.",
+    "success": "Registre completat amb èxit! Ara ja pots iniciar sessió.",
     "failed": "El registre ha fallat. Pot ser que el correu ja existeixi.",
     "invalidEmail": "Introduïu una adreça de correu electrònic vàlida.",
     "verifySuccess": "Correu verificat correctament! Ara pots iniciar sessió.",
